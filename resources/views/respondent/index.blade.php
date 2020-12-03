@@ -37,8 +37,8 @@
                                                 <td>{{ $respondent->phone }}</td>
                                                 <td>{{ $respondent->address }}</td>
                                                 <td>
-                                                    <span class="label label-warning">Edit</span>
-                                                    <span class="label label-danger">Hapus</span>
+                                                    <a href="/respondent/{{ $respondent->id }}/edit" class="label label-warning">Edit</a>
+                                                    <a href="/respondent/{{ $respondent->id }}/delete" class="label label-danger" onclick="return confirm('Yakin mau dihapus?')">Hapus</a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -34,4 +34,11 @@ class RespondentController extends Controller
         Respondent::create($request->all());
         return redirect('/respondent')->with('status', 'Data Responden Berhasil Ditambahkan');
     }
+
+    public function delete($id)
+    {
+        $respondent = Respondent::find($id);
+        $respondent->delete();
+        return redirect('/respondent')->with('status' , 'Data Berhasil Dihapus');
+    }
 }
