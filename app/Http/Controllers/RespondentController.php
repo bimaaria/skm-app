@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class RespondentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $respondents = Respondent::orderBy('created_at', 'asc')->get();
+        if($request->has('search')){
+            $respondents = Respondent::where('name', 'LIKE', '%'.$request->search.'%')->get();
+        } else {
+            $respondents = Respondent::orderBy('created_at', 'asc')->get();
+        }
         return view('respondent.index' , compact('respondents'));
     }
 

@@ -14,6 +14,11 @@
                                 <div class="input-group-btn">
                                     <a href="/respondent/create" type="button" class="btn btn-primary btn-sm">+ Tambah</a>
                                 </div>
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
